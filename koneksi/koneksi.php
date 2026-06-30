@@ -1,33 +1,19 @@
 <?php
 // =============================================================
-// KONFIGURASI KONEKSI DATABASE
-// Menggunakan Environment Variable (untuk Railway)
+// KONFIGURASI KONEKSI DATABASE (Hardcode untuk Railway)
 // =============================================================
 
-$DB_HOST = getenv('MYSQL_HOST') ?: 'mysql.railway.internal';
-$DB_USER = getenv('MYSQL_USER') ?: 'root';
-$DB_PASS = getenv('MYSQL_PASSWORD') ?: '';
-$DB_NAME = getenv('MYSQL_DATABASE') ?: 'railway';
+$DB_HOST = 'mysql.railway.internal';
+$DB_USER = 'root';
+$DB_PASS = 'bnlftZgIdfrbIGFyq0ldaUxfAJgsmRud'; // ← Password dari Railway
+$DB_NAME = 'railway';
 
-// ★ Debug: tulis ke log Railway
-error_log("DB_HOST: " . $DB_HOST);
-error_log("DB_USER: " . $DB_USER);
-error_log("DB_PASS: " . ($DB_PASS ? 'TERISI' : 'KOSONG'));
-error_log("DB_NAME: " . $DB_NAME);
-
-$koneksi = new mysqli($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
-if ($koneksi->connect_error) {
-    die('Koneksi gagal: ' . $koneksi->connect_error);
-}
-
-// ★ PASTIKAN: mysqli (bukan mysql)
 $koneksi = new mysqli($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
 
 if ($koneksi->connect_error) {
     die('<div style="padding:20px;background:#fee;color:#c00;font-family:sans-serif">
         <h3>❌ Koneksi Database Gagal</h3>
         <p>' . $koneksi->connect_error . '</p>
-        <p>Pastikan environment variable database sudah diset dengan benar.</p>
     </div>');
 }
 
