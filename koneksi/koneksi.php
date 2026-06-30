@@ -6,7 +6,7 @@
 $DB_HOST = 'mysql.railway.internal';
 $DB_USER = 'root';
 $DB_PASS = 'pOTPLapuqYhMmdBFwctNsuOEVWUycYHs';
-$DB_NAME = 'railway';
+$DB_NAME = 'ternak_db';
 
 $koneksi = new mysqli($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
 
