@@ -1,21 +1,21 @@
 <?php
 // =============================================================
 // KONFIGURASI KONEKSI DATABASE
-// Sistem Informasi Manajemen Peternakan Sapi v2.0
+// Menggunakan Environment Variable (untuk Railway)
 // =============================================================
 
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_NAME', 'ternak_db');
+$DB_HOST = getenv('MYSQL_HOST') ?: 'localhost';
+$DB_USER = getenv('MYSQL_USER') ?: 'root';
+$DB_PASS = getenv('MYSQL_PASSWORD') ?: '';
+$DB_NAME = getenv('MYSQL_DATABASE') ?: 'ternak_db';
 
-$koneksi = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
+$koneksi = new mysqli($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
 
 if ($koneksi->connect_error) {
     die('<div style="padding:20px;background:#fee;color:#c00;font-family:sans-serif">
         <h3>❌ Koneksi Database Gagal</h3>
         <p>' . $koneksi->connect_error . '</p>
-        <p>Pastikan MySQL berjalan dan database <b>ternak_db</b> sudah diimport.</p>
+        <p>Pastikan environment variable database sudah diset dengan benar.</p>
     </div>');
 }
 
@@ -54,8 +54,8 @@ function statusSapiLabel($status) {
         'siap_jual'  => '<span class="badge badge-green">Siap Jual</span>',
         'dipesan'    => '<span class="badge badge-amber">Dipesan</span>',
         'terjual'    => '<span class="badge badge-gray">Terjual</span>',
-        // backward compat
         'aktif'      => '<span class="badge badge-blue">Aktif</span>',
     ];
     return $map[$status] ?? '<span class="badge">' . htmlspecialchars($status) . '</span>';
 }
+?>
