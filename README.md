@@ -72,7 +72,7 @@ Buka browser: http://localhost/ternakfinal
 ## Struktur Folder
 
 ```
-sipeternakan/
+ternakfinal/
 ├── admin/           # Panel admin
 ├── user/            # Dashboard user/pembeli
 │   ├── dashboard.php
