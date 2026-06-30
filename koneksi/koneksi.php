@@ -4,10 +4,10 @@
 // Menggunakan Environment Variable (untuk Railway)
 // =============================================================
 
-$DB_HOST = getenv('MYSQL_HOST') ?: 'localhost';
-$DB_USER = getenv('MYSQL_USER') ?: 'root';
-$DB_PASS = getenv('MYSQL_PASSWORD') ?: '';
-$DB_NAME = getenv('MYSQL_DATABASE') ?: 'ternak_db';
+$DB_HOST = $_ENV['MYSQL_HOST'] ?? getenv('MYSQL_HOST') ?: 'mysql.railway.internal';
+$DB_USER = $_ENV['MYSQL_USER'] ?? getenv('MYSQL_USER') ?: 'root';
+$DB_PASS = $_ENV['MYSQL_PASSWORD'] ?? getenv('MYSQL_PASSWORD') ?: '';
+$DB_NAME = $_ENV['MYSQL_DATABASE'] ?? getenv('MYSQL_DATABASE') ?: 'railway';
 
 // ★ PASTIKAN: mysqli (bukan mysql)
 $koneksi = new mysqli($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
