@@ -7,15 +7,15 @@
 - Pastikan Apache dan MySQL berjalan
 
 ### 2. Letakkan Project
-Salin folder `sipeternakan` ke:
+Salin folder `ternakfinal` ke:
 ```
-C:\xampp\htdocs\sipeternakan\
+C:\xampp\htdocs\ternakfinal\
 ```
 
 ### 3. Import Database
 - Buka browser: http://localhost/phpmyadmin
-- Klik **New** → buat database bernama `db_sipeternakan`
-- Klik tab **Import** → pilih file `database/db_sipeternakan.sql`
+- Klik **New** → buat database bernama `ternak_db`
+- Klik tab **Import** → pilih file `database/ternak_db.sql`
 - Klik **Go**
 
 ### 4. Konfigurasi (jika perlu)
@@ -24,11 +24,11 @@ Edit file `koneksi/koneksi.php`:
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');   // sesuaikan username MySQL Anda
 define('DB_PASS', '');       // sesuaikan password MySQL Anda
-define('DB_NAME', 'db_sipeternakan');
+define('DB_NAME', 'ternak_db');
 ```
 
 ### 5. Jalankan
-Buka browser: http://localhost/sipeternakan
+Buka browser: http://localhost/ternakfinal
 
 ---
 
