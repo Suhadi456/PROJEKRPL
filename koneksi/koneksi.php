@@ -3,7 +3,7 @@
 // KONFIGURASI KONEKSI DATABASE (Railway)
 // =============================================================
 
-$DB_HOST = 'mysql.railway.internal';
+$DB_HOST = 'caboose.proxy.rlwy.net';
 $DB_USER = 'root';
 $DB_PASS = 'pOTPLapuqYhMmdBFwctNsuOEVWUycYHs'; // ← Password dari screenshot
 $DB_NAME = 'railway';
