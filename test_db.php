@@ -1,7 +1,7 @@
 <?php
 $host = 'mysql.railway.internal';
 $user = 'root';
-$pass = 'bN1fTZgIdfrbIGFyq0ldaUxfAJgsmRud'; // Password dari screenshot
+$pass = 'pOTPLapuqYhMmdBFwctNsuOEVWUycYHs'; // Password dari screenshot
 $db   = 'railway';
 
 echo "Mencoba koneksi ke database...<br>";
