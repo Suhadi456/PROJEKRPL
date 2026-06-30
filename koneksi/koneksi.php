@@ -9,6 +9,7 @@ $DB_USER = getenv('MYSQL_USER') ?: 'root';
 $DB_PASS = getenv('MYSQL_PASSWORD') ?: '';
 $DB_NAME = getenv('MYSQL_DATABASE') ?: 'ternak_db';
 
+// ★ PERBAIKAN: mysqli (bukan mysql)
 $koneksi = new mysqli($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
 
 if ($koneksi->connect_error) {
