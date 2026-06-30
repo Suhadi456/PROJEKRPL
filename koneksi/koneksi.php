@@ -3,10 +3,10 @@
 // KONFIGURASI KONEKSI DATABASE (Railway)
 // =============================================================
 
-$DB_HOST = 'caboose.proxy.rlwy.net';
-$DB_USER = 'root';
-$DB_PASS = 'pOTPLapuqYhMmdBFwctNsuOEVWUycYHs'; // ← Password dari screenshot
-$DB_NAME = 'railway';
+$DB_HOST = getenv('MYSQLHOST') ?: 'mysql.railway.internal';
+$DB_USER = getenv('MYSQLUSER') ?: 'root';
+$DB_PASS = getenv('MYSQLPASSWORD') ?: '';
+$DB_NAME = getenv('MYSQLDATABASE') ?: 'railway';
 
 $koneksi = new mysqli($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
 
