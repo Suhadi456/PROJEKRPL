@@ -5,7 +5,7 @@
 
 $DB_HOST = 'mysql.railway.internal';
 $DB_USER = 'root';
-$DB_PASS = 'bnlftZgIdfrbIGFyq0ldaUxfAJgsmRud'; // ← Password dari Railway
+$DB_PASS = 'bN1fTZgIdfrbIGFyq0ldaUxfAJgsmRud';
 $DB_NAME = 'railway';
 
 $koneksi = new mysqli($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
