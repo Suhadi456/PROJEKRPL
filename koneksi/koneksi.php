@@ -3,10 +3,10 @@
 // KONFIGURASI KONEKSI DATABASE (Railway)
 // =============================================================
 
-$DB_HOST = getenv('MYSQLHOST') ?: 'mysql.railway.internal';
-$DB_USER = getenv('MYSQLUSER') ?: 'root';
-$DB_PASS = getenv('MYSQLPASSWORD') ?: '';
-$DB_NAME = getenv('MYSQLDATABASE') ?: 'railway';
+$DB_HOST = 'mysql.railway.internal';
+$DB_USER = 'root';
+$DB_PASS = 'pOTPLapuqYhMmdBFwctNsuOEVWUycYHs';
+$DB_NAME = 'railway';
 
 $koneksi = new mysqli($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
 
