@@ -1,11 +1,11 @@
 <?php
 // =============================================================
-// KONFIGURASI KONEKSI DATABASE (Hardcode untuk Railway)
+// KONFIGURASI KONEKSI DATABASE (Railway)
 // =============================================================
 
 $DB_HOST = 'mysql.railway.internal';
 $DB_USER = 'root';
-$DB_PASS = 'bN1fTZgIdfrbIGFyq0ldaUxfAJgsmRud';
+$DB_PASS = 'bN1fTZgIdfrbIGFyq0ldaUxfAJgsmRud'; // ← Password dari screenshot
 $DB_NAME = 'railway';
 
 $koneksi = new mysqli($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
