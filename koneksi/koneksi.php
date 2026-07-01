@@ -18,6 +18,7 @@ if ($koneksi->connect_error) {
 }
 
 $koneksi->set_charset('utf8mb4');
+$koneksi->query("SET SESSION sql_mode = ''");
 
 // Helper: format Rupiah
 function formatRupiah($angka) {
