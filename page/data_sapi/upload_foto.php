@@ -18,8 +18,11 @@ if ($id_sapi && $tanggal && isset($_FILES['foto']) && $_FILES['foto']['error'] =
     } elseif ($_FILES['foto']['size'] > 2 * 1024 * 1024) {
         $_SESSION['error'] = 'Ukuran file melebihi 2MB.';
     } else {
-        $target_dir = '../../uploads/sapi/';
-        if (!file_exists($target_dir)) mkdir($target_dir, 0777, true);
+        // ★ Gunakan __DIR__ untuk path absolut
+        $target_dir = __DIR__ . '/../../uploads/sapi/';
+        if (!file_exists($target_dir)) {
+            mkdir($target_dir, 0777, true);
+        }
         $nama_file  = 'sapi_' . $id_sapi . '_' . time() . '.' . $ext;
         $target_file = $target_dir . $nama_file;
 
@@ -29,7 +32,7 @@ if ($id_sapi && $tanggal && isset($_FILES['foto']) && $_FILES['foto']['error'] =
             $stmt->execute();
             $_SESSION['msg'] = 'Foto berhasil diupload.';
         } else {
-            $_SESSION['error'] = 'Gagal menyimpan file foto.';
+            $_SESSION['error'] = 'Gagal menyimpan file foto: ' . error_get_last()['message'];
         }
     }
 } else {
