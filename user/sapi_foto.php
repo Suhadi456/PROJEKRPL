@@ -26,7 +26,7 @@ foreach ($rows as $i => $f) {
     $fpath = '../uploads/sapi/' . htmlspecialchars($f['foto']);
     $active = $i === 0 ? ' active' : '';
     echo '<div class="carousel-item' . $active . '">';
-    echo '<img src="' . $fpath . '" class="d-block w-100" style="max-height:400px;object-fit:contain;border-radius:8px;background:#f8f9fa" alt="Foto sapi">';
+    echo '<img src="' . $fpath . '" class="d-block w-100" style="max-height:400px;object-fit:contain;border-radius:8px;background:#f8f9fa" alt="Foto sapi" onerror="this.src=\'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22300%22 height=%22300%22%3E%3Crect fill=%22%23eee%22 width=%22300%22 height=%22300%22/%3E%3Ctext x=%2250%%22 y=%2250%%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%23999%22 font-size=%2220%22%3EFoto tidak tersedia%3C/text%3E%3C/svg%3E\'">';
     echo '<div class="carousel-caption d-none d-md-block" style="background:rgba(0,0,0,0.5);border-radius:8px;bottom:20px;padding:8px 16px">';
     echo '<small style="color:#fff;">' . date('d M Y', strtotime($f['tanggal'])) . '</small>';
     if ($f['keterangan']) echo '<br><small style="color:#fff;">' . htmlspecialchars($f['keterangan']) . '</small>';
@@ -34,7 +34,6 @@ foreach ($rows as $i => $f) {
     echo '</div>';
 }
 echo '</div>';
-// Tombol navigasi jika lebih dari 1 foto
 if (count($rows) > 1) {
     echo '<button class="carousel-control-prev" type="button" data-bs-target="#' . $carouselId . '" data-bs-slide="prev">';
     echo '<span class="carousel-control-prev-icon" aria-hidden="true"></span>';
