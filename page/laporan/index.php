@@ -1,6 +1,11 @@
 <?php
-$tgl_dari = sanitize($koneksi, $_GET['dari'] ?? date('Y-01-01'));
-$tgl_sampai = sanitize($koneksi, $_GET['sampai'] ?? date('Y-12-31'));
+// Ambil tanggal pemesanan pertama dan terakhir dari database
+$first_order = $koneksi->query("SELECT MIN(tanggal_pesan) as first, MAX(tanggal_pesan) as last FROM pemesanan")->fetch_assoc();
+$default_dari = $first_order['first'] ?? date('Y-01-01');
+$default_sampai = $first_order['last'] ?? date('Y-12-31');
+
+$tgl_dari = sanitize($koneksi, $_GET['dari'] ?? $default_dari);
+$tgl_sampai = sanitize($koneksi, $_GET['sampai'] ?? $default_sampai);
 $filter_status = sanitize($koneksi, $_GET['status'] ?? '');
 
 $where = "WHERE pm.tanggal_pesan BETWEEN '$tgl_dari' AND '$tgl_sampai'";
